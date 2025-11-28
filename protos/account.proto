@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ledger;
+
+
+enum Normalcy {
+    DEBIT_NORMAL = 0;
+    CREDIT_NORMAL = 1;
+}
+
+message Account {
+    // id of the account
+    string id = 1;
+    // name of the account
+    string name = 2;
+    // normalcy of the account
+    Normalcy normalcy = 3;
+    
+}
+
+
+message ChartOfAccounts {
+    // id of the chart of accounts
+    string id = 1;
+    // name of the chart of accounts
+    string name = 2;
+    // accounts in the chart of accounts
+    repeated Account accounts = 3;
+}
